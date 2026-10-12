@@ -36,7 +36,7 @@ jobs:
       - name: Costruisci l'immagine MFE ANC
         uses: redhat-actions/buildah-build@v3
         with:
-          image: case-platform-mfe-anc
+          image: case-platform-anc-mfe
           tags: |
            latest
            ${{ github.sha }}
@@ -46,7 +46,7 @@ jobs:
       - name: Pubblica l'immagine su GHCR
         uses: redhat-actions/push-to-registry@v3
         with:
-          image: case-platform-mfe-anc
+          image: case-platform-anc-mfe
           tags: |
            latest
            ${{ github.sha }}
