@@ -46,7 +46,7 @@ jobs:
       - name: Pubblica l'immagine su GHCR
         uses: redhat-actions/push-to-registry@v3
         with:
-          image: case-platform-anc
+          image: case-platform-anc-backend:latest
           tags: ${{ github.sha }}
           registry: ghcr.io/landrimarina
           username: ${{ github.actor }}
