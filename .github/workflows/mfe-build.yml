@@ -37,7 +37,9 @@ jobs:
         uses: redhat-actions/buildah-build@v3
         with:
           image: case-platform-mfe-anc
-          tags: ${{ github.sha }}
+          tags: |
+           latest
+           ${{ github.sha }}
           containerfiles: ./frontend/Containerfile.mfeanc
           context: ./frontend
 
@@ -45,7 +47,9 @@ jobs:
         uses: redhat-actions/push-to-registry@v3
         with:
           image: case-platform-mfe-anc
-          tags: ${{ github.sha }}
+          tags: |
+           latest
+           ${{ github.sha }}
           registry: ghcr.io/landrimarina
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
